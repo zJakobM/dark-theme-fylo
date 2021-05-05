@@ -1,0 +1,327 @@
+$introEmailBg: hsl(217, 28%, 15%);
+$mainBg: hsl(218, 28%, 13%);
+$footerBackground: hsl(216, 53%, 9%);
+$testimonialsbackground: hsl(219, 30%, 18%);
+$textColor: hsl(0, 0%, 99%);
+$gradientButtons: hsla(176, 68%, 64%, 1);
+$error: hsl(0, 100%, 63%);
+$cyan: hsl(176, 68%, 64%);
+$fontHeadings: 'Raleway', sans-serif;
+$fontBody:'Open Sans', sans-serif;
+
+@mixin centerDivs() {
+    margin:0 auto;
+}
+
+@mixin transition {
+    transition:all 0.4s ease;
+}
+
+
+body {
+    background-color: $mainBg;
+    color: #fff;
+    font-family: $fontBody;
+}
+
+.container {
+    max-width: 1440px;
+    @include centerDivs();
+}
+
+.header {
+    display:flex;
+    justify-content: space-between;
+    height: 5%;
+    background-color: $introEmailBg;
+    
+
+    img {
+        align-self: center;
+        margin-left: 80px;
+    }
+}
+
+nav {
+    height: 5%;
+    margin-top: 20px;
+    ul {
+        list-style: none;
+    } 
+    li {
+        display: inline;
+    }
+    a {
+        text-decoration: none;
+        font-family: $fontHeadings;
+        color: $textColor;
+        margin-right: 50px;
+    }
+    a:hover {
+        @include transition();
+        text-decoration: underline;
+        font-weight: 700;
+    }
+}
+
+
+.intro {
+    height: 15%;
+    text-align: center;
+    margin-bottom: 200px;
+    background-color: $introEmailBg;
+    background-image: url('images/bg-curvy-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    .intro-inner {
+        width: 40%;
+        @include centerDivs();
+    }
+    h1 {
+        margin-top: 50px;
+    }
+    button {
+        margin-top: 30px;
+        padding: 20px 90px;
+        border: none;
+        border-radius: 35px;
+        background: $gradientButtons;
+        color: $textColor;
+        font-weight: 700;
+        font-family: $fontHeadings;
+        
+    }
+
+    button:hover {
+        @include transition();
+        background: hsla(176, 68%, 85%, 1);
+    }
+
+}
+
+.perks {
+    height: 15%;
+
+}
+.perks-inner {
+   @include centerDivs();
+   max-width: 900px;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   text-align: center;
+}
+
+.perks-entry {
+    max-width: 350px;
+    margin-bottom: 100px;
+}
+
+.information {
+    @include centerDivs();
+    height: 15%;
+    width: 80%;
+
+    .information-inner {
+        width: 35%;
+        height: 15%;
+        text-align: left;
+        float: right;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    svg {
+        vertical-align: middle;
+    }
+
+    a {
+        color: $cyan;
+        border-bottom: solid 1px $cyan;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: $textColor;
+        border-color: $textColor;
+        @include transition();    
+        svg {
+            color: $textColor;
+        }
+    }
+}
+
+
+
+
+.testimonial-section {
+    height: 15%;
+    background-repeat: no-repeat;
+    margin-top: 180px;
+    margin-bottom: 250px;
+
+    .quotes-bg {
+        position: relative;
+        z-index: -1;
+        top: 15px;
+        right: 10px;
+    }
+}
+
+.testimonials-inner {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.testimonial {
+    width: 22%;
+    border-radius: 5px;
+    background-color: $testimonialsbackground;
+    padding: 25px;
+    margin-right: 30px;
+
+    .quote {
+        margin-bottom: 25px;
+    }
+
+    img {
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        float: left;
+        margin-right: 10px;
+    }
+    .name {
+        font-size: 14px;
+        font-weight: 700;
+        margin: 0;
+    }
+    .position {
+        font-size: 12px;
+        margin:0;
+    }
+}
+
+.form {
+    @include centerDivs();
+    text-align: center;
+    position: relative;
+    height: 15%;
+    width:50%;
+    background-color: $introEmailBg;
+    padding: 25px 125px 30px 125px;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 5px 12px -2px #000000; 
+    box-shadow: 4px 5px 12px -2px #000000;
+
+    input {
+        width: 50%;
+        border-radius: 25px;
+        border:none;
+        padding: 15px 35px;
+    }
+
+    input:invalid {
+        p {
+            display: block;
+        }
+    }
+
+    button {
+        padding: 18px 30px;
+        border-radius: 25px;
+        border:none;
+        background-color: $gradientButtons;
+        color: $textColor;
+        font-weight:700;
+        margin: 40px 0px 0px 30px;
+    }
+
+    button:hover {
+        background: hsla(176, 68%, 85%, 1);
+        @include transition();
+    }
+
+    .error {
+        position: relative;
+        bottom: 10px;
+        right:200px;
+        font-size: 12px;
+        color: $error;
+        display: none;
+    }
+}
+
+
+.footer {
+    @include centerDivs();
+    background-color: $footerBackground;
+    height: 15%;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .icons {
+        position: relative;
+        bottom: -40px;
+        right: 40px;
+    }
+
+    .location {
+        width: 30%;
+    }
+
+    .contact {
+       p {
+           margin:0;
+       }
+       .icons {
+           bottom: -22px;
+       }
+    }
+
+    .links {
+        width: 25%;
+        ul {
+            list-style: none;
+            column-count: 2;
+        }
+        li {
+            margin-bottom: 25px;
+        }
+        a {
+            text-decoration: none;
+            color: $textColor;
+        }
+        a:hover {
+            font-weight: 700;
+            @include transition();
+        }
+    }
+    .socials {
+        svg {
+            width: 25px;
+            height: 25px;
+            fill: $textColor;
+            border: 1px solid $textColor;
+            border-radius: 25px;
+            padding: 5px;
+            margin-right: 10px;
+        }
+
+        a:hover {
+            svg {
+                fill: $cyan;
+                border-color: $cyan;
+                @include transition();
+            }
+        }
+    }
+}
